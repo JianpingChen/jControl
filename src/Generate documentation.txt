@@ -1,0 +1,1 @@
+yuidoc -C -c yuidoc.json ./lib

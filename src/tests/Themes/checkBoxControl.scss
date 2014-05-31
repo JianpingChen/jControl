@@ -1,0 +1,10 @@
+.checkBoxControl-content{
+}
+
+.checkBoxControl-checkBox {
+}
+
+.checkBoxControl {
+	@include inputControl;
+	display: inline-block;
+}

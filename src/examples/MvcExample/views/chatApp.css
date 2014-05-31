@@ -1,0 +1,124 @@
+.layoutView-notificationContainer {
+	display: inline-block;
+	width: 60%;
+	vertical-align:text-top;
+}
+
+.layoutView-messageContainer {
+	display: inline-block;
+	width: 40%;
+	vertical-align:text-top;
+}
+
+.addMessageView {
+	padding: 4px;
+	border: 2px solid orange;
+	margin: 2px;
+}
+
+.addMessageView-fieldLabel {
+	display: inline-block;
+	margin: 10px 4px 4px 4px;
+}
+
+.addMessageView-friendDropdown {
+	display: inline-block;
+}
+
+.addMessageView-subject {
+	display: inline-block;
+}
+
+.addMessageView-messageBody {
+	display: inline-block;
+	margin: 10px;
+	min-width: 240px;
+}
+
+.addMessageView-addButton {
+	display: inline-block;
+	border: 1px solid green;
+	padding: 4px;
+	margin: 12px;
+}
+
+.addMessageView-addButton.disabled {
+	opacity:0.4;
+	filter:alpha(opacity=40);
+}
+
+.notificationView {
+	border: 2px solid green;
+	margin: 2px;
+}
+
+.notificationView-notificationTitle {
+	display: inline-block;
+	padding: 4px;
+	font-weight: bold;
+}
+
+.notificationView-unreadIcon {
+	min-width: 20px;
+	min-height: 20px;
+	margin: 10px;
+}
+
+.messageListView {
+	border: 2px solid green;
+	margin: 2px;
+}
+
+.messageListView-title {
+	display: inline-block;
+	padding: 4px;
+	font-weight: bold;
+}
+
+.messageView {
+	padding: 4px;
+	border: 1px solid orange;
+	margin: 2px;
+}
+
+.messageView.unread {
+	background: green;
+}
+
+.messageView-brief-row {
+	display: inline-block;
+}
+
+.messageView-from {
+	display: inline-block;
+	margin: 4px 4px 4px 10px;
+	background: lightblue;
+}
+
+.messageView-subject {
+	display: inline-block;
+	margin: 4px 4px 4px 10px;
+	background: lightblue;
+}
+
+.messageView-messageBody {
+	display: inline-block;
+	margin: 4px 4px 4px 10px;
+	background: lightgrey;
+}
+
+.modalDialog {
+	height: auto;
+}
+
+.unreadMessageView-button {
+	display: inline-block;
+	margin: 4px;
+	padding: 2px;
+	border: 1px solid green;
+}
+
+.unreadMessageView-buttons-row {
+	display: inline-block;
+	float: right;
+}

@@ -1,0 +1,17 @@
+.dialogButtonRow {
+	display: block;
+	float: right;
+	margin: 0px 10px 0px 0px;
+}
+
+.dialogButtonContainer {
+	position: absolute;
+	right: 20px;
+}
+
+.dialogButton {
+	float: right;
+	margin: 4px;
+	&.disabled {
+	}
+}

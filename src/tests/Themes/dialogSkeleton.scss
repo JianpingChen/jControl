@@ -1,0 +1,18 @@
+.dialogSkeleton-titleRow {
+	margin: 2px;
+	font-size: $dialogTitleFontSize;
+	font-family: $dialogTitleFontFamily; 
+	font-style: $dialogTitleFontStyle;
+	font-weight: $dialogTitleFontWeight;
+}
+
+.dialogSkeleton-contentRow {
+	background-color: $dialogContentBackgroundColor;
+}
+
+.dialogSkeleton-buttonRow {
+	margin: 2px;
+	background-color: $dialogButtonRowBackgroundColor;
+	height: $dialogButtonRowHeight;
+	position: relative;
+}

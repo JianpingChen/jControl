@@ -1,0 +1,6 @@
+.divButton {
+	cursor: pointer;
+	&.disabled {
+		cursor: auto;
+	}
+}

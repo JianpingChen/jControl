@@ -1,0 +1,9 @@
+.modalDialog {
+	@include border2px;
+	width: $defaultDialogWidth;
+	height: $defaultDialogHeight;
+	background-color: $dialogBackgroundColor;
+}
+
+.modalDialog-resizer{
+}

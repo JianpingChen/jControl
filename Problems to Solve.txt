@@ -1,0 +1,104 @@
+HTML and CSS were created for delivering static content over internet. For developing business applications 
+with intensive create, read, update, and delete (CRUD) data operations, there is not much infrastructure 
+in HTML and CSS themselves. Many JavaScript libraries are created to face the challenges.
+
+I. Architectural Problems
+
+At architecture level, many web based business applications are inheriting an architecture suitable only 
+for static content. In this architecture, most of the page content is created on the server side 
+in the format of HTML. Client side dynamic behaviours (event handling for mouse events, keyboard events, 
+and value change events) are provided by JavaScript code. This architecture may lead to following problems 
+during development.
+
+1. Unstable contract between client and server. In this architecture, the data contract between client and server 
+is really the HTML page content created on the server side. But the HTML content is also used for 
+presentation purpose. When an application extends its functionality, this contract may change simply because of 
+presentation needs. Instability in data contract often leads to extra maintenance cost for client side 
+JavaScript and CSS code.
+
+2. Difficulty in unit testing client side code. Because the data contract between client and server is 
+the page content, client code can only function under that contract. When writing tests, especially unit tests 
+for client side code, this DOM structure, or part of it, often needs to be mocked. In addition to 
+the cost for mocking, whenever server side needs to alter the page content, these mockings will have 
+to be updated to reflect the new contract.
+
+3. Difficulty in client side data validation. Compared with static web pages, business applications 
+are distinguished by the need to validate data input from users. In this architecture, business data 
+is embedded inside the DOM created on the server side. For the client side JavaScript code to 
+validate business data, it will have to match the DOM elements containing the data with applicable business rules. 
+The matching logic can only function within a given page content, the contract, and cannot be reused 
+in a different page content with different DOM structure. To test the matching logic, client side 
+DOM matching logic and server side DOM generation logic must both be involved. This means only integration tests 
+can be used to verify the matching logic. These integration tests are often hard to write, slow to execute, 
+and expensive to maintain.
+
+4. Tight coupling of client side UI rendering with server side data receiving. In this architecture, business data 
+is transported to the server by form submit which delivers data in discrete format. Each field/property is 
+a separate key value pair in the form submit request. Server side must reassemble discrete fields/properties 
+into business domain data structures. The interpretation logic is highly dependent on the layout of the form 
+on client side. This tight coupling not only limits the freedom for UI rendering but also increases 
+complexity of server side data interpretation logic. For complex business data structures, this could mean 
+high cost for development and maintenance.
+ 
+5. Duplicate code for cross browser handling. For business applications, it is often a must to reach out 
+to users with old version browsers. Cross browser compatibility is probably the most expensive part 
+in development for any web based business application. It involves special case handling according to 
+different browser behaviours. If these special logics are not programmed in a reusable way, you end up 
+having them duplicated and distributed across different parts of the application. The more widespread they are,
+the more testing effort it will require to ensure quality of the application for cross browser support.
+
+6. Difficulty in supporting responsive design. As mobile devices become the dominant browsing devices, 
+implementing different versions of the same site to support different devices is not cost effective. 
+Responsive design becomes a must. Media query based approach may solve half of the problem when only the 
+layout of the site needs to be adapted. For one site to support both mobile device and desktop screen, 
+often than not, behaviour of certain parts of the page needs to be adapted. When this is required, 
+your page will have to respond to window size change event, e.g. mobile device flip from portrait to landscape. 
+In traditional architecture, a window size change response routine is used to handle this. In doing so, 
+the window size change response routine will require knowledge about all elements that need to change behaviour 
+and details on how their behaviour changes. This approach may lead to high maintenance cost for this part of the code.
+
+In conclusion, adopting the architecture designed for static content delivery may lead to high cost 
+in developing web based business applications.
+
+II. Practical Problems
+
+When building web based business applications, the first decision to make is to choose the framework for development. 
+One alternative is to use commercial frameworks. Two of the most influential commercial frameworks are Ext.Js and 
+Telerik Kendo UI. Another alternative is to use open source frameworks. For the second alternative, typically, 
+an application will include jQuery, jQueryUi (and some jQueryUi plugins), and one of AngularJs or KnockoutJs or Backbone.
+
+For applications based on open source frameworks, the following problems may arise in practice. 
+
+1. jQueryUi plugins are not developed systematically and are never tested together. They may conflict with each other.
+
+2. jQuery and jQueryUi plugins are developed with no data binding considerations. jQuery and jQueryUi plugins' 
+DOM manipulations may mess up the data binding established by AngularJs and KnockoutJs since 
+both AngularJs and KnockoutJs assume exclusive control over DOM elements bound to data.
+
+3. Backbone avoids data binding to allow jQuery and jQueryUi plugins to manipulate DOM freely at the cost of 
+complex data interpretation logic on the server side. It will expose architectural problem 1, 3, and 4.
+
+Ext.Js is a quite extensive user interface framework. The good side is it provides a rich set of functionality. 
+The down side is it requires a quite deep learning curve to use efficiently. Ext.Js essentially provides a framework 
+for DOM construction and manipulation in its proprietary syntax with extra decoration (or complexity). There is no 
+data binding concept in its documentation. Data may be submitted to server by form submit or ajax calls. 
+When form submit is used, it will expose architectural problem 4. When ajax call is used, client side code will 
+have to construct JSON data from DOM elements (via Ext.Js proprietary DOM wrapper objects) before submitting data 
+to server. This will require extra complexity on the client side.
+
+Telerik Kendo UI provides a collection of user interface controls. It overcomes the problem in jQueryUi plugins: 
+controls are not tested together systematically and may conflict with each other. However, being a jQuery based system, 
+it inherits the same drawback of jQuery and jQueryUi: lack of data binding. Therefore it shares the same problem 
+with Ext.Js: either use form submit in which case it exposes architectural problem 4 or require client code to 
+reassemble JSON data from DOM elements.
+
+To solve these practical problems, we need a library that can:
+- construct and manipulate DOM in a syntax that is easy to learn (ideally close to HTML syntax)
+- support data binding to simplify client side code
+- support domain model based data contract and avoid form submit with discrete name value pairs wherever possible
+- provide cross browser and cross device support
+- provide frequently used common UI controls that are systematically developed and tested with no conflicts
+- support popular OO design patterns, e.g. MVC and MVVM, naturally
+- support code modularization
+
+

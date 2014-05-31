@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F02BDFB-B039-449C-BADA-11FCC4AF0FCA}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MvcAppExample</RootNamespace>
+    <AssemblyName>MvcAppExample</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\Castle.Windsor.Ioc\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\Castle.Windsor.Ioc\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\ApplicationTypesInstaller.cs" />
+    <Compile Include="Contracts\DeleteContactRequest.cs" />
+    <Compile Include="Contracts\DeleteProductRequest.cs" />
+    <Compile Include="Contracts\ErrorResponse.cs" />
+    <Compile Include="Contracts\Request.cs" />
+    <Compile Include="Contracts\Response.cs" />
+    <Compile Include="Contracts\SuccessResponse.cs" />
+    <Compile Include="Controllers\ControllerFactory.cs" />
+    <Compile Include="Controllers\DataRepository.cs" />
+    <Compile Include="Controllers\ExceptionInterceptor.cs" />
+    <Compile Include="Controllers\FileController.cs" />
+    <Compile Include="Controllers\FileRepository.cs" />
+    <Compile Include="Controllers\IFileRepository.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="ErrorHandling\AppException.cs" />
+    <Compile Include="Resources\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Strings.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ErrorViewModel.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IDataRepository.cs" />
+    <Compile Include="Controllers\IJsonDataParser.cs" />
+    <Compile Include="Controllers\ITypeResolver.cs" />
+    <Compile Include="Controllers\ServerController.cs" />
+    <Compile Include="Controllers\TypedJsonResult.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Contracts\Contact.cs" />
+    <Compile Include="Controllers\JsonContractParser.cs" />
+    <Compile Include="Controllers\ContractTypeResolver.cs" />
+    <Compile Include="Contracts\Product.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AppViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Global.asax" />
+    <Content Include="images\bigImage.jpg" />
+    <Content Include="README.txt" />
+    <Content Include="scripts\application\aboutMvcApp.js" />
+    <Content Include="scripts\application\abstractViews\contactEditAbstractView.js" />
+    <Content Include="scripts\application\abstractViews\modelEditAbstractView.js" />
+    <Content Include="scripts\application\abstractViews\productEditAbstractView.js" />
+    <Content Include="scripts\application\business.js" />
+    <Content Include="scripts\application\businessLogic\salesRepAgent.js" />
+    <Content Include="scripts\application\concreteViews\editProductView.js" />
+    <Content Include="scripts\application\controllers\editContactController.js" />
+    <Content Include="scripts\application\controllers\editContactWizardController.js" />
+    <Content Include="scripts\application\controllers\editProductController.js" />
+    <Content Include="scripts\application\controllers\editProductDialogController.js" />
+    <Content Include="scripts\application\controllers\listContactController.js" />
+    <Content Include="scripts\application\controllers\listProductController.js" />
+    <Content Include="scripts\application\controllers\salesRepController.js" />
+    <Content Include="scripts\application\customControl\errorDialog.js" />
+    <Content Include="scripts\application\customControl\localizedFileButton.js" />
+    <Content Include="scripts\application\errorHandling\errorEventArg.js" />
+    <Content Include="scripts\application\errorHandling\errorHandler.js" />
+    <Content Include="scripts\application\layout.js" />
+    <Content Include="scripts\application\models\contact.js" />
+    <Content Include="scripts\application\models\contactList.js" />
+    <Content Include="scripts\application\models\product.js" />
+    <Content Include="scripts\application\models\productList.js" />
+    <Content Include="scripts\application\models\systemConstants.js" />
+    <Content Include="scripts\application\personalize.js" />
+    <Content Include="scripts\lib\comm\asyncCallParam.js" />
+    <Content Include="scripts\lib\comm\asyncGetCall.js" />
+    <Content Include="scripts\lib\comm\asyncPostCall.js" />
+    <Content Include="scripts\lib\comm\formDataPost.js" />
+    <Content Include="scripts\lib\comm\formDirectPost.js" />
+    <Content Include="scripts\lib\comm\formPost.js" />
+    <Content Include="scripts\lib\comm\serviceProxy.js" />
+    <Content Include="scripts\lib\controls\dialogButtonRow.js" />
+    <Content Include="scripts\lib\controls\dialogSkeleton.js" />
+    <Content Include="scripts\lib\controls\dialogTitleRow.js" />
+    <Content Include="scripts\lib\controls\enumMouseButton.js" />
+    <Content Include="scripts\lib\controls\fileBrowseButton.js" />
+    <Content Include="scripts\lib\controls\modalDialog.js" />
+    <Content Include="scripts\lib\controls\popup.js" />
+    <Content Include="scripts\lib\controls\popupMoveHandler.js" />
+    <Content Include="scripts\lib\controls\valueContainer.js" />
+    <Content Include="scripts\lib\controls\windowOverlay.js" />
+    <Content Include="scripts\lib\ecma5-r.js" />
+    <Content Include="scripts\lib\elements\a.js" />
+    <Content Include="scripts\lib\elements\area.js" />
+    <Content Include="scripts\lib\elements\audio.js" />
+    <Content Include="scripts\lib\elements\body.js" />
+    <Content Include="scripts\lib\elements\br.js" />
+    <Content Include="scripts\lib\elements\button.js" />
+    <Content Include="scripts\lib\elements\canvas.js" />
+    <Content Include="scripts\lib\elements\caption.js" />
+    <Content Include="scripts\lib\elements\checkBox.js" />
+    <Content Include="scripts\lib\elements\containerElement.js" />
+    <Content Include="scripts\lib\elements\datetimeInput.js" />
+    <Content Include="scripts\lib\elements\decentMouseEvent.js" />
+    <Content Include="scripts\lib\elements\div.js" />
+    <Content Include="scripts\lib\elements\divButton.js" />
+    <Content Include="scripts\lib\elements\documentElement.js" />
+    <Content Include="scripts\lib\elements\element.js" />
+    <Content Include="scripts\lib\elements\embed.js" />
+    <Content Include="scripts\lib\elements\fieldset.js" />
+    <Content Include="scripts\lib\elements\figCaption.js" />
+    <Content Include="scripts\lib\elements\figure.js" />
+    <Content Include="scripts\lib\elements\fileInput.js" />
+    <Content Include="scripts\lib\elements\floatInput.js" />
+    <Content Include="scripts\lib\elements\form.js" />
+    <Content Include="scripts\lib\elements\h1.js" />
+    <Content Include="scripts\lib\elements\h2.js" />
+    <Content Include="scripts\lib\elements\h3.js" />
+    <Content Include="scripts\lib\elements\h4.js" />
+    <Content Include="scripts\lib\elements\h5.js" />
+    <Content Include="scripts\lib\elements\h6.js" />
+    <Content Include="scripts\lib\elements\hr.js" />
+    <Content Include="scripts\lib\elements\iframe.js" />
+    <Content Include="scripts\lib\elements\img.js" />
+    <Content Include="scripts\lib\elements\inputElement.js" />
+    <Content Include="scripts\lib\elements\intInput.js" />
+    <Content Include="scripts\lib\elements\keygen.js" />
+    <Content Include="scripts\lib\elements\label.js" />
+    <Content Include="scripts\lib\elements\legend.js" />
+    <Content Include="scripts\lib\elements\li.js" />
+    <Content Include="scripts\lib\elements\map.js" />
+    <Content Include="scripts\lib\elements\numericInput.js" />
+    <Content Include="scripts\lib\elements\objectElement.js" />
+    <Content Include="scripts\lib\elements\ol.js" />
+    <Content Include="scripts\lib\elements\optGroup.js" />
+    <Content Include="scripts\lib\elements\option.js" />
+    <Content Include="scripts\lib\elements\p.js" />
+    <Content Include="scripts\lib\elements\param.js" />
+    <Content Include="scripts\lib\elements\position.js" />
+    <Content Include="scripts\lib\elements\radioButton.js" />
+    <Content Include="scripts\lib\elements\scrollPanel.js" />
+    <Content Include="scripts\lib\elements\select.js" />
+    <Content Include="scripts\lib\elements\size.js" />
+    <Content Include="scripts\lib\elements\source.js" />
+    <Content Include="scripts\lib\elements\span.js" />
+    <Content Include="scripts\lib\elements\spanText.js" />
+    <Content Include="scripts\lib\elements\svg.js" />
+    <Content Include="scripts\lib\elements\table.js" />
+    <Content Include="scripts\lib\elements\tbody.js" />
+    <Content Include="scripts\lib\elements\td.js" />
+    <Content Include="scripts\lib\elements\textArea.js" />
+    <Content Include="scripts\lib\elements\textBlock.js" />
+    <Content Include="scripts\lib\elements\textInput.js" />
+    <Content Include="scripts\lib\elements\textNode.js" />
+    <Content Include="scripts\lib\elements\tfoot.js" />
+    <Content Include="scripts\lib\elements\th.js" />
+    <Content Include="scripts\lib\elements\thead.js" />
+    <Content Include="scripts\lib\elements\tr.js" />
+    <Content Include="scripts\lib\elements\track.js" />
+    <Content Include="scripts\lib\elements\ul.js" />
+    <Content Include="scripts\lib\elements\valueElement.js" />
+    <Content Include="scripts\lib\elements\video.js" />
+    <Content Include="scripts\lib\elements\windowElement.js" />
+    <Content Include="scripts\lib\jControl.js" />
+    <Content Include="scripts\lib\observe\acceptType.js" />
+    <Content Include="scripts\lib\observe\bindButtonCommand.js" />
+    <Content Include="scripts\lib\observe\bindProperty.js" />
+    <Content Include="scripts\lib\observe\bindFileProperty.js" />
+    <Content Include="scripts\lib\observe\collectionModelBase.js" />
+    <Content Include="scripts\lib\observe\command.js" />
+    <Content Include="scripts\lib\observe\customEvent.js" />
+    <Content Include="scripts\lib\observe\fileHandlingModelFactory.js" />
+    <Content Include="scripts\lib\observe\filePropertyModel.js" />
+    <Content Include="scripts\lib\observe\fileTypeModel.js" />
+    <Content Include="scripts\lib\observe\fileValueModel.js" />
+    <Content Include="scripts\lib\observe\guid.js" />
+    <Content Include="scripts\lib\observe\modelBase.js" />
+    <Content Include="scripts\lib\observe\modelFactory.js" />
+    <Content Include="scripts\lib\observe\multiFilePropertyModel.js" />
+    <Content Include="scripts\lib\observe\observable.js" />
+    <Content Include="scripts\lib\observe\observableCollection.js" />
+    <Content Include="scripts\lib\testingTools\dragdropEventSimulator.js" />
+    <Content Include="scripts\lib\testingTools\keyboardEventSimulator.js" />
+    <Content Include="scripts\lib\testingTools\mockCommandHost.js" />
+    <Content Include="scripts\lib\testingTools\mockDragDropHandler.js" />
+    <Content Include="scripts\lib\testingTools\mockErrorHandler.js" />
+    <Content Include="scripts\lib\testingTools\mockEventListener.js" />
+    <Content Include="scripts\lib\testingTools\mockFocusHandler.js" />
+    <Content Include="scripts\lib\testingTools\mockKeyboardHandler.js" />
+    <Content Include="scripts\lib\testingTools\mockMouseHandler.js" />
+    <Content Include="scripts\lib\testingTools\mockPropertyHost.js" />
+    <Content Include="scripts\lib\testingTools\mockResizeHandler.js" />
+    <Content Include="scripts\lib\testingTools\mouseEventSimulator.js" />
+    <Content Include="scripts\localization\en\Application.js" />
+    <Content Include="scripts\localization\fr\Application.js" />
+    <Content Include="scripts\minify.txt" />
+    <Content Include="scripts\mvcApp.js" />
+    <Content Include="scripts\myControls.js" />
+    <Content Include="scripts\r.js" />
+    <Content Include="scripts\require.js" />
+    <Content Include="scripts\tests\allUnitTests.js" />
+    <Content Include="scripts\tests\editProductAbstractViewTests.js" />
+    <Content Include="scripts\tests\editProductControllerTests.js" />
+    <Content Include="scripts\tests\editProductViewTests.js" />
+    <Content Include="scripts\tests\mockEmptyProduct.js" />
+    <Content Include="scripts\tests\productModelTests.js" />
+    <Content Include="scripts\tests\testSingle.html" />
+    <Content Include="styles\app.css" />
+    <Content Include="styles\images\document_delete.png" />
+    <Content Include="styles\images\document_edit.png" />
+    <Content Include="styles\Themes\SummerHawaii\ConvertScssToCss.txt" />
+    <Content Include="styles\Themes\SummerHawaii\images\Adobe-PDF-Document.png" />
+    <Content Include="styles\Themes\SummerHawaii\images\arrow_down.png" />
+    <Content Include="styles\Themes\SummerHawaii\images\arrow_left.png" />
+    <Content Include="styles\Themes\SummerHawaii\images\arrow_right.png" />
+    <Content Include="styles\Themes\SummerHawaii\images\arrow_up.png" />
+    <Content Include="styles\Themes\SummerHawaii\images\document_microsoft_word.png" />
+    <Content Include="styles\Themes\SummerHawaii\images\File-Video-MPEG.png" />
+    <Content Include="styles\Themes\SummerHawaii\images\file_audio.png" />
+    <Content Include="styles\Themes\SummerHawaii\images\file_audio_mp3.png" />
+    <Content Include="styles\Themes\SummerHawaii\images\file_text.png" />
+    <Content Include="styles\Themes\SummerHawaii\images\file_video_avi.png" />
+    <Content Include="styles\Themes\SummerHawaii\images\file_xml.png" />
+    <Content Include="styles\Themes\SummerHawaii\images\file_zip.png" />
+    <Content Include="styles\Themes\SummerHawaii\images\icon-close.png" />
+    <Content Include="styles\Themes\SummerHawaii\images\image.gif" />
+    <Content Include="styles\Themes\SummerHawaii\images\minus.png" />
+    <Content Include="styles\Themes\SummerHawaii\images\navdown.gif" />
+    <Content Include="styles\Themes\SummerHawaii\images\navup.gif" />
+    <Content Include="styles\Themes\SummerHawaii\images\plus.png" />
+    <Content Include="styles\Themes\SummerHawaii\SummerHawaii.css" />
+    <Content Include="styles\Themes\WinterAlaska\ConvertScssToCss.txt" />
+    <Content Include="styles\Themes\WinterAlaska\images\Adobe-PDF-Document.png" />
+    <Content Include="styles\Themes\WinterAlaska\images\arrow_down.png" />
+    <Content Include="styles\Themes\WinterAlaska\images\arrow_left.png" />
+    <Content Include="styles\Themes\WinterAlaska\images\arrow_right.png" />
+    <Content Include="styles\Themes\WinterAlaska\images\arrow_up.png" />
+    <Content Include="styles\Themes\WinterAlaska\images\document_microsoft_word.png" />
+    <Content Include="styles\Themes\WinterAlaska\images\File-Video-MPEG.png" />
+    <Content Include="styles\Themes\WinterAlaska\images\file_audio.png" />
+    <Content Include="styles\Themes\WinterAlaska\images\file_audio_mp3.png" />
+    <Content Include="styles\Themes\WinterAlaska\images\file_text.png" />
+    <Content Include="styles\Themes\WinterAlaska\images\file_video_avi.png" />
+    <Content Include="styles\Themes\WinterAlaska\images\file_xml.png" />
+    <Content Include="styles\Themes\WinterAlaska\images\file_zip.png" />
+    <Content Include="styles\Themes\WinterAlaska\images\icon-close.png" />
+    <Content Include="styles\Themes\WinterAlaska\images\image.gif" />
+    <Content Include="styles\Themes\WinterAlaska\images\minus.png" />
+    <Content Include="styles\Themes\WinterAlaska\images\navdown.gif" />
+    <Content Include="styles\Themes\WinterAlaska\images\navup.gif" />
+    <Content Include="styles\Themes\WinterAlaska\images\plus.png" />
+    <Content Include="styles\Themes\WinterAlaska\WinterAlaska.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Server\ServerSuccess.cshtml" />
+    <Content Include="Views\Server\ServerFailure.cshtml" />
+    <Content Include="Views\Home\AboutFr.cshtml" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="styles\Themes\backgroundOverlay.scss" />
+    <None Include="styles\Themes\base.scss" />
+    <None Include="styles\Themes\body.scss" />
+    <None Include="styles\Themes\checkBoxControl.scss" />
+    <None Include="styles\Themes\clickControl.scss" />
+    <None Include="styles\Themes\dialogButtonRow.scss" />
+    <None Include="styles\Themes\dialogSkeleton.scss" />
+    <None Include="styles\Themes\dialogTitleRow.scss" />
+    <None Include="styles\Themes\divButton.scss" />
+    <None Include="styles\Themes\fileBrowse.scss" />
+    <None Include="styles\Themes\h.scss" />
+    <None Include="styles\Themes\modalDialog.scss" />
+    <None Include="styles\Themes\SummerHawaii\SummerHawaii.scss" />
+    <None Include="styles\Themes\text.scss" />
+    <None Include="styles\Themes\WinterAlaska\WinterAlaska.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Strings.fr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.fr.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="scripts\localization\en\Application.resx" />
+    <EmbeddedResource Include="scripts\localization\fr\Application.resx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65224</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>$(ProjectDir)scripts\localization\ResxToJs $(ProjectDir)scripts\localization\en\Application.resx
+
+$(ProjectDir)scripts\localization\ResxToJs $(ProjectDir)scripts\localization\fr\Application.resx
+
+</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

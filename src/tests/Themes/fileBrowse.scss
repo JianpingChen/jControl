@@ -1,0 +1,7 @@
+.fileBrowseButton {
+	min-width: 16px;
+	min-height: 16px;
+	padding: 4px;
+	@include gradient($dialogTitleBackgroundColor);
+	@include round1pxBorder;
+}

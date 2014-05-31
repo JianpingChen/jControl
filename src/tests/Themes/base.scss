@@ -1,0 +1,204 @@
+﻿@mixin inputControl {
+	&:hover {
+		background-color: $activeColor; }
+	&:focus {
+		border: 2px solid $highlightColor; }
+}
+
+@mixin border1px {
+	border: 1px solid $borderColor; 
+}
+
+@mixin border2px {
+	border: 2px solid $borderColor; 
+}
+
+@mixin margin2px {
+	margin: 2px; }
+
+@mixin margin4px {
+	margin: 4px; }
+	
+@mixin padding4px {
+	padding: 4px; }
+	
+@mixin round1pxBorder {
+	border: 1px solid $borderColor;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px; }
+	
+@mixin round2pxBorder {
+	border: 2px solid $borderColor;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px; }
+
+@mixin smallSizeImage
+{
+	width: 8px;
+	height: 8px;
+	min-width: 8px;
+	min-height: 8px;
+	vertical-align: middle;
+}
+
+@mixin mediumSizeImage
+{
+	width: 16px;
+	height: 16px;
+	min-width: 16px;
+	min-height: 16px;
+	vertical-align: middle;
+}
+
+@mixin gradient($color) {
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, $color));
+	background-image: -webkit-linear-gradient(#ffffff, $color);
+	background-image: -moz-linear-gradient(#ffffff, $color);
+	background-image: -o-linear-gradient(#ffffff, $color);
+	background-image: linear-gradient(#ffffff, $color);
+}
+
+.transparent-input {
+	 opacity:0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=0)";
+    filter:alpha(opacity=0);
+};
+
+@mixin circle($radius) {
+	width: 2*$radius;
+	height: 2*$radius;
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin oval($xRadius, $yRadius) {
+	width: $xRadius;
+	height: $yRadius;
+	-moz-border-radius: $yRadius / ($yRadius/2);
+	-webkit-border-radius: $yRadius / ($yRadius/2);
+	border-radius: $yRadius / ($yRadius/2);
+}
+
+@mixin triangle-up($width, $color) {
+	width: 0;
+	height: 0;
+	border-left: $width/2 solid transparent;
+	border-right: $width/2 solid transparent;
+	border-bottom: $width/2 solid $color;
+}
+
+@mixin triangle-down($width, $color) {
+	width: 0;
+	height: 0;
+	border-left: $width/2 solid transparent;
+	border-right: $width/2 solid transparent;
+	border-top: $width solid $color;
+}
+
+@mixin triangle-left($width, $color) {
+	width: 0;
+	height: 0;
+	border-top: $width/2 solid transparent;
+	border-right: $width solid $color;
+	border-bottom: $width/2 solid transparent;
+}
+
+@mixin triangle-right($width, $color) {
+	width: 0;
+	height: 0;
+	border-top: $width/2 solid transparent;
+	border-left: $width solid $color;
+	border-bottom: $width/2 solid transparent;
+}
+
+@mixin triangle-topleft($width, $color) {
+	width: 0;
+	height: 0;
+	border-top: $width solid $color;
+	border-right: $width solid transparent;
+}
+
+@mixin triangle-topright($width, $color) {
+	width: 0;
+	height: 0;
+	border-top: $width solid $color;
+	border-left: $width solid transparent;
+}
+
+@mixin triangle-bottomleft($width, $color) {
+	width: 0;
+	height: 0;
+	border-bottom: $width solid $color;
+	border-right: $width solid transparent;
+}
+
+@mixin triangle-bottomright($width, $color) {
+	width: 0;
+	height: 0;
+	border-bottom: $width solid $color;
+	border-left: $width solid transparent;
+}
+
+@mixin curvedarrow($color) {
+	position: relative;
+	width: 0;
+	height: 0;
+	border-top: 9px solid transparent;
+	border-right: 9px solid $color;
+	-webkit-transform: rotate(10deg);
+	-moz-transform: rotate(10deg);
+	-ms-transform: rotate(10deg);
+	-o-transform: rotate(10deg);
+	&:after {
+	  content: "";
+	  position: absolute;
+	  border: 0 solid transparent;
+	  border-top: 3px solid $color;
+	  border-radius: 20px 0 0 0;
+	  top: -12px;
+	  left: -9px;
+	  width: 12px;
+	  height: 12px;
+	  -webkit-transform: rotate(45deg);
+	  -moz-transform: rotate(45deg);
+	  -ms-transform: rotate(45deg);
+	  -o-transform: rotate(45deg);
+	}
+}
+
+@mixin talkbubble($color) {
+	width: 120px;
+	height: 80px;
+	background: $color;
+	position: relative;
+	-moz-border-radius:    10px;
+	-webkit-border-radius: 10px;
+	border-radius:         10px;
+	&:before {
+		content:"";
+		position: absolute;
+		right: 100%;
+		top: 26px;
+		width: 0;
+		height: 0;
+		border-top: 13px solid transparent;
+		border-right: 26px solid $color;
+		border-bottom: 13px solid transparent;
+	}
+}
+
+@import './body.scss';
+@import './h.scss';
+@import './text.scss';
+@import './clickControl.scss';
+@import './divButton.scss';
+@import './dialogTitleRow.scss';
+@import './dialogSkeleton.scss';
+@import './dialogButtonRow.scss';
+@import './fileBrowse.scss';
+@import './modalDialog.scss';
+@import './backgroundOverlay.scss';
+

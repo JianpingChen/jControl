@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label_about" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="label_aboutP1" xml:space="preserve">
+    <value>This application is created to demonstrate that you can create fully testable, themable, localizable web applications efficiently using our library.</value>
+  </data>
+  <data name="label_aboutTitle" xml:space="preserve">
+    <value>About this example</value>
+  </data>
+  <data name="label_applicationTitle" xml:space="preserve">
+    <value>CRUD System Example</value>
+  </data>
+  <data name="label_back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="label_cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="label_next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="label_ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="label_sales" xml:space="preserve">
+    <value>Demo</value>
+  </data>
+  <data name="label_selectTheme" xml:space="preserve">
+    <value>Select a theme:</value>
+  </data>
+  <data name="themeName_summerHawaii" xml:space="preserve">
+    <value>Summer Hawaii</value>
+  </data>
+  <data name="themeName_winterAlaska" xml:space="preserve">
+    <value>Winter Alaska</value>
+  </data>
+  <data name="tooltip_About" xml:space="preserve">
+    <value>About this application</value>
+  </data>
+  <data name="tooltip_collapseLeft" xml:space="preserve">
+    <value>Collapse or expand panel on the left</value>
+  </data>
+  <data name="tooltip_collapseRight" xml:space="preserve">
+    <value>Collapse or expand panel on the right</value>
+  </data>
+  <data name="tooltip_Sales" xml:space="preserve">
+    <value>Sales events</value>
+  </data>
+  <data name="lable_commonTasks" xml:space="preserve">
+    <value>Common Tasks</value>
+  </data>
+  <data name="lable_contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="lable_create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="lable_find" xml:space="preserve">
+    <value>Find</value>
+  </data>
+  <data name="lable_product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="label_save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="lable_productName" xml:space="preserve">
+    <value>Product Name</value>
+  </data>
+  <data name="label_errorTitle" xml:space="preserve">
+    <value>Application Error</value>
+  </data>
+  <data name="label_dataSaved" xml:space="preserve">
+    <value>Data saved.</value>
+  </data>
+  <data name="error_productNameNotEmpty" xml:space="preserve">
+    <value>Product name cannot be empty</value>
+  </data>
+  <data name="error_contactNameNotEmpty" xml:space="preserve">
+    <value>Contact name cannot be empty</value>
+  </data>
+  <data name="error_mustBeValidEmail" xml:space="preserve">
+    <value>Must be a valid email address</value>
+  </data>
+  <data name="label_requirements" xml:space="preserve">
+    <value>Requirements</value>
+  </data>
+  <data name="text_businessRequirement" xml:space="preserve">
+    <value>Business requirement</value>
+  </data>
+  <data name="text_businessRequirementContent" xml:space="preserve">
+    <value>Product name cannot be empty string, leading and trailing white space must be trimmed</value>
+  </data>
+  <data name="text_uiRequirement" xml:space="preserve">
+    <value>User interface requirement</value>
+  </data>
+  <data name="text_uiRequirement1" xml:space="preserve">
+    <value>1. When a new product is created, product name must be empty with no error message shown</value>
+  </data>
+  <data name="text_uiRequirement2" xml:space="preserve">
+    <value>2. When user input contains white space, it must be trimmed on both ends when name edit box lost focus</value>
+  </data>
+  <data name="text_uiRequirement3" xml:space="preserve">
+    <value>3. If after trimming, the user input is empty string, display an error message beside name edit box</value>
+  </data>
+  <data name="text_uiRequirement4" xml:space="preserve">
+    <value>4. Save button should not allow user to save a product with empty name</value>
+  </data>
+  <data name="lable_contactEmail" xml:space="preserve">
+    <value>Contact EMail</value>
+  </data>
+  <data name="lable_contactName" xml:space="preserve">
+    <value>Contact Name</value>
+  </data>
+  <data name="text_contactNameBusinessRequirementContent" xml:space="preserve">
+    <value>Contact name cannot be empty string, leading and trailing white space must be trimmed</value>
+  </data>
+  <data name="text_contactNameUIRequirement1" xml:space="preserve">
+    <value>1. When a new contact is created, contact name must be empty with no error message shown</value>
+  </data>
+  <data name="text_contactNameUIRequirement4" xml:space="preserve">
+    <value>4. Save button should not allow user to save a contact with empty name</value>
+  </data>
+  <data name="text_emailBusinessRequirementContent" xml:space="preserve">
+    <value>Email field must match companywide email regex definition</value>
+  </data>
+  <data name="text_emailUiRequirement1" xml:space="preserve">
+    <value>1. When a new contact is created, contact email must be empty with no error message shown</value>
+  </data>
+  <data name="text_emailUiRequirement2" xml:space="preserve">
+    <value>2. When email edit box lost focus and the value is invalid, display an error message beside the edit box</value>
+  </data>
+  <data name="tooltip_deleteModel" xml:space="preserve">
+    <value>Delete data in this row</value>
+  </data>
+  <data name="tooltip_editModel" xml:space="preserve">
+    <value>Edit data in this row</value>
+  </data>
+  <data name="title_editProduct" xml:space="preserve">
+    <value>Edit Product</value>
+  </data>
+  <data name="title_editContact" xml:space="preserve">
+    <value>Edit Contact</value>
+  </data>
+  <data name="label_dataDeleted" xml:space="preserve">
+    <value>Data deleted.</value>
+  </data>
+  <data name="title_editContactEmail" xml:space="preserve">
+    <value>Edit Contact Email</value>
+  </data>
+  <data name="title_editContactName" xml:space="preserve">
+    <value>Edit Contact Name</value>
+  </data>
+  <data name="lable_productPicture" xml:space="preserve">
+    <value>Product Pictures</value>
+  </data>
+  <data name="lable_contactPicture" xml:space="preserve">
+    <value>Contact Picture</value>
+  </data>
+  <data name="title_editContactPicture" xml:space="preserve">
+    <value>Edit Contact Picture</value>
+  </data>
+  <data name="label_browse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="lable_productVideo" xml:space="preserve">
+    <value>Product Video</value>
+  </data>
+  <data name="label_productPrice" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="label_productType" xml:space="preserve">
+    <value>Product Type</value>
+  </data>
+  <data name="label_productType_FamilyCar" xml:space="preserve">
+    <value>Family Car</value>
+  </data>
+  <data name="label_productType_RaceCar" xml:space="preserve">
+    <value>Race Car</value>
+  </data>
+  <data name="label_productType_Suv" xml:space="preserve">
+    <value>SUV</value>
+  </data>
+  <data name="label_genderFemale" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="label_genderMale" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="label_genderUnknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="lable_dateOfBirth" xml:space="preserve">
+    <value>Date of Birth</value>
+  </data>
+  <data name="lable_gender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="month_Apr" xml:space="preserve">
+    <value>April</value>
+  </data>
+  <data name="month_Aug" xml:space="preserve">
+    <value>August</value>
+  </data>
+  <data name="month_Dec" xml:space="preserve">
+    <value>December</value>
+  </data>
+  <data name="month_Feb" xml:space="preserve">
+    <value>February</value>
+  </data>
+  <data name="month_Jan" xml:space="preserve">
+    <value>January</value>
+  </data>
+  <data name="month_Jul" xml:space="preserve">
+    <value>July</value>
+  </data>
+  <data name="month_Jun" xml:space="preserve">
+    <value>June</value>
+  </data>
+  <data name="month_Mar" xml:space="preserve">
+    <value>March</value>
+  </data>
+  <data name="month_May" xml:space="preserve">
+    <value>May</value>
+  </data>
+  <data name="month_Nov" xml:space="preserve">
+    <value>November</value>
+  </data>
+  <data name="month_Oct" xml:space="preserve">
+    <value>October</value>
+  </data>
+  <data name="month_Sept" xml:space="preserve">
+    <value>September</value>
+  </data>
+  <data name="day_Fri" xml:space="preserve">
+    <value>Fri.</value>
+  </data>
+  <data name="day_Mon" xml:space="preserve">
+    <value>Mon.</value>
+  </data>
+  <data name="day_Sat" xml:space="preserve">
+    <value>Sat.</value>
+  </data>
+  <data name="day_Sun" xml:space="preserve">
+    <value>Sun.</value>
+  </data>
+  <data name="day_Thur" xml:space="preserve">
+    <value>Thur.</value>
+  </data>
+  <data name="day_Tue" xml:space="preserve">
+    <value>Tue.</value>
+  </data>
+  <data name="day_Wed" xml:space="preserve">
+    <value>Wed.</value>
+  </data>
+  <data name="label_documentation" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
+  <data name="tooltip_documentation" xml:space="preserve">
+    <value>Library documentation in English</value>
+  </data>
+</root>

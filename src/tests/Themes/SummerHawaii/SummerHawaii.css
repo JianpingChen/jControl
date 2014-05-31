@@ -1,0 +1,111 @@
+.transparent-input {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=0)";
+  filter: alpha(opacity=0); }
+
+body {
+  background-color: #5f50e6;
+  font-size: 0.85em;
+  font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+  color: #b9eddb; }
+
+h1 {
+  font-size: 2em; }
+
+h2 {
+  font-size: 1.5em; }
+
+h3 {
+  font-size: 1.2em; }
+
+h4 {
+  font-size: 1.1em; }
+
+h5 {
+  font-size: 1em; }
+
+h6 {
+  font-size: 1em; }
+
+.clickControl {
+  padding: 4px; }
+  .clickControl:hover {
+    background-color: #d4b148; }
+
+.divButton {
+  cursor: pointer; }
+  .divButton.disabled {
+    cursor: auto; }
+
+.dialogTitleRow {
+  background-color: #76e4f5;
+  height: 24px; }
+
+.dialogTitleRow-cancelCornerButton {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  vertical-align: middle;
+  margin: 2px;
+  background-image: url("./images/icon-close.png");
+  background-repeat: no-repeat; }
+
+.dialogSkeleton-titleRow {
+  margin: 2px;
+  font-size: 1.2em;
+  font-family: "Times New Roman", Georgia, Serif;
+  font-style: normal;
+  font-weight: bold; }
+
+.dialogSkeleton-contentRow {
+  background-color: #1fad9d; }
+
+.dialogSkeleton-buttonRow {
+  margin: 2px;
+  background-color: #91cccb;
+  height: 32px;
+  position: relative; }
+
+.dialogButtonRow {
+  display: block;
+  float: right;
+  margin: 0px 10px 0px 0px; }
+
+.dialogButtonContainer {
+  position: absolute;
+  right: 20px; }
+
+.dialogButton {
+  float: right;
+  margin: 4px; }
+
+.fileBrowseButton {
+  min-width: 16px;
+  min-height: 16px;
+  padding: 4px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, white), color-stop(100%, #76e4f5));
+  background-image: -webkit-linear-gradient(white, #76e4f5);
+  background-image: -moz-linear-gradient(white, #76e4f5);
+  background-image: -o-linear-gradient(white, #76e4f5);
+  background-image: linear-gradient(white, #76e4f5);
+  border: 1px solid #ede161;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px; }
+  .fileBrowseButton.fileIcon-update {
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, white), color-stop(100%, #91cccb));
+    background-image: -webkit-linear-gradient(white, #91cccb);
+    background-image: -moz-linear-gradient(white, #91cccb);
+    background-image: -o-linear-gradient(white, #91cccb);
+    background-image: linear-gradient(white, #91cccb); }
+
+.modalDialog {
+  border: 2px solid #ede161;
+  width: 400px;
+  height: 300px;
+  background-color: #cbf23d; }
+
+.backgroundOverlay {
+  background-color: #eda8e7;
+  opacity: 0.75; }

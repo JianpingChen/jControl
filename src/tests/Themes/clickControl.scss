@@ -1,0 +1,5 @@
+.clickControl {
+	@include padding4px;
+	&:hover {
+		background-color: $activeColor; }
+}

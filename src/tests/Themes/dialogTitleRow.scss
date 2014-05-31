@@ -1,0 +1,11 @@
+.dialogTitleRow {
+	background-color: $dialogTitleBackgroundColor;
+	height: $dialogTitleHeight;
+}
+
+.dialogTitleRow-cancelCornerButton {
+	@include mediumSizeImage;
+	margin: 2px;
+	background-image: $dialogCancelIcon;
+	background-repeat: no-repeat;
+}

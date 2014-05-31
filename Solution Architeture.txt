@@ -1,0 +1,119 @@
+Solution Architecture
+
+It seems obvious that the problem we are trying to solve is caused by adopting an architecture not suitable 
+for web based business application. Our solution must be built on a different architecture. 
+
+To solve the first part of the problem, we'll need to change the contract between client and server. 
+Based on experience with classic client-server applications, we can use business data structures, also known as domain model, as 
+the contract between client and server. This contract will be much stabler compared with page content as contract. 
+When business applications extend their functionality, the contract can be augmented with more data structures 
+rather than altered for presentation needs. This new contract can be transported between client and server 
+by AJAX calls in the format of JSON data structures, also known as data transportation objects, or as part of the page initialization data structure. 
+This change in data contract will require that page DOM be constructed on the client side by JavaScript code. 
+DOM construction in JavaScript can be implemented in many different ways. One alternative is to use jQuery 
+which provides the ability to create DOM elements on the client side. Another alternative is to create 
+a DOM construction library in JavaScript. In our solution, we take the second approach. 
+
+The change in data contract also solves the second part of the problem partially. Now client code is 
+no longer restricted in any given DOM structure. Mockings for business data structures should be 
+much simpler than mocking a DOM structure and should suffer much less changes.
+
+Because server side no longer creates DOM structure, client side code has all the freedom to create 
+any DOM structure that it is cost effective to create. More layered structure can be introduced 
+into client side JavaScript code. Popular UI design patterns, MVC and MVVM, among others, can be used 
+to improve testability of client side code without expensive DOM mockings. 
+
+Data validation includes two parts: validity of data fields and validity of data structures. 
+In most cases validity of a data structure is just the aggregation of validity of all of its fields 
+but there are exceptions. Data validation may be implemented on the client side, or on the server side, 
+or both. Client side data validation can improve user experience and prevent invalid data from being 
+sent to the server to save precious server resource. 
+
+When DOM structure is created on the client side, data validation logic can be easily attached to 
+user input controls as (or after) they are created. This solves the third part of the problem. 
+Field level data validation can be implemented by data binding mechanism which synchronizes data values 
+between user input control and underlying business data structure, often implemented as data models. 
+Structural level data validation can be implemented by command binding mechanism which synchronizes 
+enabled state of user data submission controls with validity of the underlying business data structure. 
+Because both user input control and data binding mechanism are created in client side JavaScript code, 
+it should be relatively easy to create unit tests for this part of the code with commonly used 
+JavaScript testing framework, e.g. QUnit.
+
+Because client side has been provided with business data structure, it has the opportunity to send 
+the business data structure to the server in a comprehensive way, e.g., serialized JSON data structure, 
+rather than sending discrete data structure, field/property level key-value pairs, back to server 
+requiring server data reassembling logic to make assumptions on client side field/property naming. 
+By doing so, client side code can now materialize the freedom to render data manipulation controls 
+independent of server side data interpretation logic. Server side data reassembling logic can now be 
+replaced with simple JSON deserialization according to business data contract. This solves the fourth part 
+of the problem. 
+
+Well, only partly. JSON serialization doesn't have built-in infrastructure for transporting files. 
+Furthermore, old version browsers do not allow JavaScript code to read file content on client side. 
+To create a mechanism for transporting files that works for all supported browsers, we'll still need 
+special handling on both client side and server side based on a mutually agreed protocol. We provide 
+one protocol in our library to solve this problem. Users of our library may invent their own.
+
+In our solution, for each and every DOM element constructed on the client side, we create a corresponding 
+JavaScript object representing the underlying DOM element. This approach provides us a full structure 
+about the DOM in terms of JavaScript objects. Client side code no longer need to traverse any part of 
+the DOM to gain knowledge about DOM. Wherever a behaviour should be introduced or disabled, it can be done 
+in the corresponding JavaScript object. These JavaScript objects also allow us to mask out behaviour differences 
+among different browsers so that user interface controls can be constructed with consistent assumptions 
+about underlying DOM elements. This approach has been proven working with the user controls we include 
+in our library which functions properly in the browsers on Window platform we've tested with, IE 8 - 11, 
+Chrome 29.0.1547.57, Firefox 23.0.1, Opera 18.0.1284.63, and Safari 5.1.7. Because our library has masked out 
+most of browser differences in DOM elements, users of our library are immune from most of cross browser concerns. 
+As our library matures, users should see more benefit in this regard.
+
+This solution comes with the limitation that the browser must support JavaScript very well. This may not be true 
+in all browsers. Some old version browsers have limitations on the JavaScript functions you can execute. 
+Some JavaScript libraries, e.g. https://code.google.com/p/ddr-ecma5/, have been developed to handle this situation. 
+We can reuse these libraries in our solution.
+
+The first concern people may raise about this new approach is performance. If we compare the operations that 
+a browser will have to perform in the two different approaches, we should actually see performance improvement. 
+In both approaches, the browser will have to perform the following operations before the page is fully shown 
+and functional. 
+1. Parse HTML content
+2. Construct the DOM
+3. Parse JavaScript files
+4. Execute JavaScript functions invoked in document.onload
+
+In a single page scenario, in our new approach, step 1 and 2 should take much smaller amount of time compared with 
+the traditional approach since there is much less HTML content coming from the server. In step 3, our approach 
+may require more time since we'll have more JavaScript code. In step 4 however, traditional approach will 
+have to traverse the DOM several times to hook up user interaction routines. On the contrary, our new approach 
+will only need to construct the DOM once. By this simple analysis, we should expect to see performance improvement 
+with the new approach.
+
+In multi page scenario, traditional approach will normally trigger a full page refresh which require a full browser 
+cycle as described above. In our approach, we have the choice of not reconstructing the full DOM but replacing parts 
+of the DOM with refreshing data (obtained via AJAX call). This is because our approach have the capability of 
+reconstructing any parts of the DOM. This will allow us to skip step 3 where the most of the cost is in our approach.
+
+With more responsibilities shifted to the client side JavaScript, it does require a better architectural structure 
+in client side JavaScript code. The following described is an application reference model we recommend 
+for using this library. At the lowest level is a communication layer that is responsible of obtaining data 
+from the server (via AJAX GET/POST calls) and sending data to the server (via AJAX POST/PUT calls or form submit).
+Above the communication layer should be an application controller layer whose responsibility includes creating models
+based on JSON data obtained from server, rendering views based on the models created, wiring up 
+user interaction controllers (mouse event handlers, keyboard event handlers, value change event handlers) and 
+data binding between view elements and model properties. This model mimics the classic MVC pattern. Model layer 
+consists of models that wrap around JSON raw data to perform certain business logics that make sense to happen 
+on client side, e.g., client side data validation. Controllers may have sub-layered structures. For example, 
+an application controller may only be responsible of creating application layout view, requesting controllers 
+for different business modules to render their own views, and adding these result views into view areas in application 
+layout view. Controller for a particular business module may further delegate its responsibilities to sub-layered 
+controllers. Data binding is considered a specialized controller whose responsibility is to synchronize 
+content of a view element, e.g. a text input, with the underlying model property, e.g. a string property of a model.
+Only controllers may access the underlying communication layer. Communication layer consists of server proxies. 
+Depending on the complexity of the application, controllers in each business module may use one or more server proxies.
+Proxies used by more than one business module should not be an encouraged practice in general.
+
+A Microsoft .NET MVC based application is created as an example for this client side code structure.
+
+
+
+
+

@@ -1,0 +1,8 @@
+{
+	"name": "jControl API",
+    "description": "jControl: a library for object oriented javascript programming",
+    "version": "1.0.0",
+    "options": {
+        "outdir": "../documentation"
+	}
+}

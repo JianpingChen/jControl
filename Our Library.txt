@@ -1,0 +1,72 @@
+Our Library
+
+Our library is created to implement the solution described in the "Solution Architecture". 
+This library is created in an object-oriented programming style. 
+This web post, http://oojscontrols.blogspot.ca/2013/11/oo-programming-with-javascript.html, 
+describes the pattern we use to write JavaScript code to support inheritance and composition 
+normally found in object-oriented programming languages. 
+
+As first part of the solution, we created a set of classes for DOM construction. 
+These classes are under "elements" folder of our library. 
+
+Each HTML tag has a corresponding class in our library for construction. Compared with a raw DOM 
+construction approach which returns raw DOM element, our classes return a JavaScript object 
+for each of the DOM element. This extra layer of indirection provided us convenience in other parts 
+of our implementation of the solution. Raw DOM element only allows one handler function on each user 
+interface event, e.g. onclick. Our JavaScript object representing the corresponding DOM element 
+will allow us to attach any number of event handlers to each user interface event. This is often useful 
+in organizing user interface functionality especially when MVC pattern is used. When data binding 
+between a DOM element and a model property is established, our JavaScript object will notify data binding 
+with value change events from the DOM element and it also provided a consistent way of updating 
+the DOM element when the model property is changed by other parts of the application. 
+
+To support the need for data binding and data validation, we created a set of classes in "observe" folder. 
+
+"customEvent" class is the basic building block in this folder. It manages multiple subscriptions. 
+When an event is raised, all subscribers are notified with the event payload. Subscription based notifications 
+are used throughout our library to avoid imperative function implementations. 
+
+"observable" class creates a JavaScript object that represents a value or object whose change can be observed 
+by subscription.
+
+Our "propertyAccessor" class is the key for our data binding mechanism. It constructs an object 
+that wraps around a property of an object. Each propertyAccessor object is created with two functions: 
+a setter function that changes the value of the property and a getter function that provides read access 
+to the property. Extending the object created by "observable" class, it accepts subscribers 
+for value change event. In addition, it also accepts subscription for error event. The error event 
+is used in the case where model validation logic needs to raise error about the invalidity of a property value. 
+Interested DOM element object(s) may subscribe to error event to display error message about a property 
+under user interaction. 
+
+"bind" class binds a view element with a propertyAccessor and keeps values of both synchronized. 
+
+"command" class takes two function parameters, execution body of the command and enable state control function. 
+This structure is useful for controlling enabled state of a view element, e.g. data submit button, to stop 
+invalid data from being sent to the server.
+
+"bindButtonCommand" class binds a button (or its equivalent) element with a command. The button's enabled state 
+is controlled by the return of the enable state control function of the command.
+
+In "comm" folder, we provide a set of classes to support client server communication.
+
+"serviceProxy" creates an object representing the url root of a set of ajax calls. 
+
+A set of classes with names starting with "rest" is provided to support HTTP calls to a RESTful service. "restCallBase" is the base class of all REST calls.
+restDelete, restGet, restGetAll, restPost, and restPut represents "DELETE", "GET", "GET ALL", "POST", and "PUT" calls.
+
+"asyncGetCall", "asyncPostCall", and "ayncCallParam" can be used to support SOAP based the service.
+
+Each "asyncGetCall" or "asyncPostCall" contains a relative path for the ajax call. Every ajax call may contain 
+zero or more "asynCallParam" objects. Each object created by "asyncCallParam" function represents a key-value pair 
+for a query parameter.
+
+"formPost" class is used to submit data when file upload is involved.
+
+In "controls" folder, we provide a few examples of reusable controls. Visual Dynamics Software Ltd. provide more 
+reusable user interface controls through a commercial license (see demo http://jcontrol-visualdynamics.cloudapp.net/). 
+Included in the sample controls are popup, modalDialog, and fileBrowseButton. 
+
+Our library is a complete implementation of the solution described in "Solution Architecture.txt" document. 
+Users of the library can fill in business logic to build a complete business application with our library. In the examples folder, we have a few simple examples for getting started with our library.
+A Microsoft .NET MVC based sample solution is also included as an example for a full business application. This sample solution proves that our library can be used to build fully testable, themable, localizable, responsive web based business 
+applications across browsers efficiently.

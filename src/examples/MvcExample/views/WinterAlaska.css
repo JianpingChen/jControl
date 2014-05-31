@@ -1,0 +1,552 @@
+.transparent-input {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=0)";
+  filter: alpha(opacity=0); }
+
+body {
+  background-color: #f2f7f7;
+  font-size: 0.85em;
+  font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+  color: #2e2d1d; }
+
+h1 {
+  font-size: 2em; }
+
+h2 {
+  font-size: 1.5em; }
+
+h3 {
+  font-size: 1.2em; }
+
+h4 {
+  font-size: 1.1em; }
+
+h5 {
+  font-size: 1em; }
+
+h6 {
+  font-size: 1em; }
+
+.tooltip {
+  max-width: 120px;
+  color: #c29244;
+  background-color: #3ae8c8;
+  padding: 4px;
+  border: 1px solid #4a451b;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px; }
+
+.clickControl {
+  padding: 4px; }
+  .clickControl:hover {
+    background-color: #f2efda; }
+
+.divButton {
+  cursor: pointer; }
+  .divButton.disabled {
+    cursor: auto; }
+
+.menuItem {
+  padding: 4px;
+  min-width: 60px; }
+  .menuItem.activePath {
+    background-color: #f2efda; }
+
+.actionMenuItem {
+  cursor: pointer; }
+
+.checkBoxControl {
+  display: inline-block; }
+  .checkBoxControl:hover {
+    background-color: #f2efda; }
+  .checkBoxControl:focus {
+    border: 2px solid #d1d152; }
+
+.expanderExpandControl {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  min-width: 18px;
+  min-height: 18px;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  margin: 2px;
+  cursor: pointer; }
+  .expanderExpandControl.expanded {
+    background-image: url("./images/navup.gif"); }
+  .expanderExpandControl.collapsed {
+    background-image: url("./images/navdown.gif"); }
+  .expanderExpandControl:hover {
+    background-color: #f2efda; }
+
+.expander-headerContainer {
+  margin: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 1.1em;
+  font-family: "Times New Roman", Georgia, Serif;
+  font-style: italic;
+  background-color: #91cccb; }
+
+.expander-bodyContainer {
+  margin: 4px; }
+
+.expander {
+  border: 1px solid #4a451b;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px; }
+
+.treeNode-childContainer {
+  margin: 0px 0px 0px 0px;
+  padding: 2px 2px 2px 10px; }
+
+.treeNodeExpander {
+  display: none; }
+  .treeNodeExpander.hasChildren {
+    display: inline-block;
+    padding: 2px;
+    width: 22px;
+    height: 22px;
+    min-width: 18px;
+    min-height: 18px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    margin: 2px;
+    cursor: pointer; }
+    .treeNodeExpander.hasChildren:hover {
+      background-color: #f2efda; }
+  .treeNodeExpander.hasChildren.expanded {
+    background-image: url("./images/navup.gif"); }
+  .treeNodeExpander.hasChildren.collapsed {
+    background-image: url("./images/navdown.gif"); }
+
+.radioButtonControl {
+  clear: both;
+  margin: 4px; }
+  .radioButtonControl:hover {
+    background-color: #f2efda; }
+
+.tabHeaderContainer-tabButton {
+  padding: 4px;
+  cursor: pointer; }
+  .tabHeaderContainer-tabButton.active {
+    background-color: #d1d152;
+    cursor: auto; }
+
+.tabHeaderContainer {
+  border: 1px solid #4a451b;
+  height: 100%; }
+  .tabHeaderContainer:hover {
+    background-color: #f2efda; }
+
+.tabGroup-headerRow {
+  display: inline-block; }
+
+.tabGroup-contentRow {
+  border: 2px solid #4a451b;
+  min-height: 200px; }
+
+.dialogTitleRow {
+  background-color: #76e4f5;
+  height: 24px; }
+
+.dialogTitleRow-cancelCornerButton {
+  width: 22px;
+  height: 22px;
+  min-width: 18px;
+  min-height: 18px;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  margin: 2px;
+  margin: 2px;
+  background-image: url("./images/icon-close.png");
+  background-repeat: no-repeat; }
+
+.dialogSkeleton-titleRow {
+  margin: 2px;
+  font-size: 1.2em;
+  font-family: "Times New Roman", Georgia, Serif;
+  font-style: normal;
+  font-weight: bold; }
+
+.dialogSkeleton-contentRow {
+  background-color: #1fad9d; }
+
+.dialogSkeleton-buttonRow {
+  margin: 2px;
+  background-color: #cfbf7a;
+  height: 32px;
+  position: relative; }
+
+.dialogButtonRow {
+  display: block;
+  float: right;
+  margin: 0px 10px 0px 0px; }
+
+.dialogButtonContainer {
+  position: absolute;
+  right: 20px; }
+
+.dialogButton {
+  float: right;
+  margin: 4px; }
+
+.fileBrowseButton {
+  min-width: 16px;
+  min-height: 16px;
+  padding: 4px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, white), color-stop(100%, #76e4f5));
+  background-image: -webkit-linear-gradient(white, #76e4f5);
+  background-image: -moz-linear-gradient(white, #76e4f5);
+  background-image: -o-linear-gradient(white, #76e4f5);
+  background-image: linear-gradient(white, #76e4f5);
+  border: 1px solid #4a451b;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px; }
+
+.modalDialog {
+  border: 2px solid #4a451b;
+  width: 320px;
+  height: 240px;
+  background-color: #3df2dd; }
+
+.wizardDialog {
+  border: 2px solid #4a451b;
+  width: 320px;
+  height: 240px; }
+
+.backgroundOverlay {
+  background-color: #5eb5b1;
+  opacity: 0.7; }
+
+.verticalSplitter-divider {
+  min-width: 6px;
+  width: 9px;
+  background-color: #62ccf0;
+  cursor: e-resize; }
+  .verticalSplitter-divider.disabled {
+    cursor: auto; }
+
+.verticalSplitter-divider-collapseLeft {
+  width: 0;
+  height: 0;
+  border-top: 4.5px solid transparent;
+  border-right: 9px solid #917a60;
+  border-bottom: 4.5px solid transparent;
+  display: inline-block; }
+  .verticalSplitter-divider-collapseLeft.disabled {
+    display: none; }
+
+.verticalSplitter-divider-collapseRight {
+  width: 0;
+  height: 0;
+  border-top: 4.5px solid transparent;
+  border-left: 9px solid #917a60;
+  border-bottom: 4.5px solid transparent;
+  display: inline-block; }
+  .verticalSplitter-divider-collapseRight.disabled {
+    display: none; }
+
+.tocNavigator {
+  min-height: 40px;
+  border: 1px solid #4a451b; }
+
+.tocNavigator-tocPanel {
+  min-width: 180px; }
+
+.tocNavigator-listTocPanel-tocItem:hover {
+  background-color: #f2efda; }
+
+.tocNavigator-contentPanel {
+  min-width: 300px; }
+
+.tocNavigator-tocDivider {
+  width: 12px;
+  background-color: #62ccf0;
+  border: 1px solid #4a451b; }
+
+.tocDivider-button {
+  display: inline-block; }
+  .tocDivider-button.expanded {
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-right: 12px solid #917a60;
+    border-bottom: 6px solid transparent; }
+  .tocDivider-button.collapsed {
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-left: 12px solid #917a60;
+    border-bottom: 6px solid transparent; }
+
+.verticalDividerTemplate-spacer {
+  min-height: 6px;
+  height: 24px; }
+
+.resizePanel {
+  min-width: 32px;
+  min-height: 32px; }
+
+.resizePanel-resizer {
+  background-color: #cfbf7a; }
+
+.validatingInput {
+  padding: 4px; }
+  .validatingInput.error {
+    border: 1px solid #17d1bb; }
+
+.validatingInput-error {
+  padding: 2px 2px 2px 2px;
+  color: #f71928; }
+
+.fileIcon-deleteButton {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-color: #cfbf7a;
+  background-image: url("./images/icon-close.png");
+  background-repeat: no-repeat; }
+
+.transparent-input {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=0)";
+  filter: alpha(opacity=0); }
+
+.fileIcon {
+  min-width: 52px;
+  height: 64px;
+  margin: 2px; }
+
+.fileIcon-icon {
+  width: 36px;
+  height: 36px; }
+
+.fileIcon-icon-video-avi {
+  background-image: url("./images/file_video_avi.png"); }
+
+.fileIcon-icon-audio-mpeg {
+  background-image: url("./images/File-Video-MPEG.png"); }
+
+.fileIcon-icon-application-x-zip-compressed {
+  background-image: url("./images/file_zip.png"); }
+
+.fileIcon-icon-application-pdf {
+  background-image: url("./images/Adobe-PDF-Document.png"); }
+
+.fileIcon-icon-text-xml {
+  background-image: url("./images/file_xml.png"); }
+
+.fileIcon-icon-text-plain {
+  background-image: url("./images/file_text.png"); }
+
+.fileUploadControl {
+  padding: 2px;
+  border: 1px solid #4a451b;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px; }
+
+.numericSpinner-incButton {
+  background-color: #76e4f5;
+  margin: 2px;
+  width: 0;
+  height: 0;
+  border-top: 9.5px solid transparent;
+  border-left: 19px solid #1fad9d;
+  border-bottom: 9.5px solid transparent; }
+
+.numericSpinner-decButton {
+  background-color: #76e4f5;
+  margin: 2px;
+  width: 0;
+  height: 0;
+  border-top: 9.5px solid transparent;
+  border-right: 19px solid #1fad9d;
+  border-bottom: 9.5px solid transparent; }
+
+.datePicker-valueText {
+  min-width: 220px;
+  height: 16px; }
+
+.datePicker-openButton {
+  background-color: #76e4f5;
+  border: 1px solid #4a451b;
+  margin: 2px;
+  vertical-align: middle; }
+
+.datePicker-picker {
+  border: 1px solid #4a451b;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  background-color: #f2efda; }
+
+.datePicker-yearDec {
+  width: 16px;
+  height: 16px;
+  background-color: #76e4f5;
+  border: 1px solid #4a451b;
+  margin: 2px;
+  width: 0;
+  height: 0;
+  border-top: 9.5px solid transparent;
+  border-right: 19px solid #1fad9d;
+  border-bottom: 9.5px solid transparent; }
+
+.datePicker-yearInc {
+  width: 16px;
+  height: 16px;
+  background-color: #76e4f5;
+  border: 1px solid #4a451b;
+  margin: 2px;
+  width: 0;
+  height: 0;
+  border-top: 9.5px solid transparent;
+  border-left: 19px solid #1fad9d;
+  border-bottom: 9.5px solid transparent; }
+
+.datePicker-monthDec {
+  width: 16px;
+  height: 16px;
+  background-color: #76e4f5;
+  border: 1px solid #4a451b;
+  margin: 2px;
+  width: 0;
+  height: 0;
+  border-top: 9.5px solid transparent;
+  border-right: 19px solid #1fad9d;
+  border-bottom: 9.5px solid transparent; }
+
+.datePicker-monthInc {
+  width: 16px;
+  height: 16px;
+  background-color: #76e4f5;
+  border: 1px solid #4a451b;
+  margin: 2px;
+  width: 0;
+  height: 0;
+  border-top: 9.5px solid transparent;
+  border-left: 19px solid #1fad9d;
+  border-bottom: 9.5px solid transparent; }
+
+.datePicker-dayOfWeek {
+  background-color: #cfbf7a;
+  margin: 2px; }
+
+.datePicker-day {
+  width: 16px;
+  height: 16px; }
+  .datePicker-day.selected {
+    background-color: #5eb5b1; }
+
+.progressControl-progress-total {
+  background-color: #5eb5b1;
+  padding: 2px;
+  width: 200px; }
+
+.progressControl-progress-finished {
+  background-color: #cfbf7a;
+  height: 16px; }
+
+.cropImg {
+  min-width: 120px; }
+
+.cropLeft {
+  margin: -5px; }
+
+.cropRight {
+  margin: 0px 0px -5px 0px; }
+
+.carouselPanel-pageRight {
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-left: 18px solid #917a60;
+  border-bottom: 9px solid transparent; }
+
+.carouselPanel-pageLeft {
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-right: 18px solid #917a60;
+  border-bottom: 9px solid transparent; }
+
+.navigationBar-topItem {
+  padding: 4px; }
+
+.navigation-child {
+  background-color: #91cccb;
+  padding: 2px; }
+
+.datasetControl {
+  min-height: 32px;
+  min-width: 32px; }
+
+.datasetControl-headerPanel-headerItem {
+  background-color: #3ae8c8;
+  padding: 2px;
+  border: 1px solid #4a451b;
+  font-weight: bold;
+  width: 110px; }
+
+.datasetControl-cellPanel {
+  width: 110px;
+  padding: 2px;
+  border: 1px solid #4a451b; }
+
+.dragDropSortPanel-item {
+  opacity: 1; }
+  .dragDropSortPanel-item.dragging {
+    opacity: 0.5; }
+
+.dragDropCreatePanel-templateContainer {
+  border: 1px solid #4a451b; }
+
+.dragDropCreatePanel-instanceContaner {
+  border: 1px solid #4a451b;
+  padding: 4px;
+  vertical-align: top; }
+
+.dragDropCreatePanel-dropZone {
+  opacity: 0.5;
+  min-width: 120px;
+  vertical-align: top;
+  border: 1px solid #4a451b;
+  padding: 4px; }
+
+.dragDropMovePanel {
+  border: 1px solid #4a451b; }
+
+.dragDropMovePanel-srcContainer {
+  border: 1px solid #4a451b;
+  padding: 4px; }
+
+.dragDropMovePanel-tgtContaner {
+  border: 1px solid #4a451b;
+  padding: 4px; }
+
+.dropTarget-dropMarker {
+  height: 9px; }
+
+.dropTarget-dropMarker-markerLine {
+  background-color: #4a451b;
+  top: 3.5px;
+  height: 2px; }
+
+.dropTarget-dropMarker-leftArrow {
+  width: 0;
+  height: 0;
+  border-top: 4.5px solid transparent;
+  border-left: 9px solid #4a451b;
+  border-bottom: 4.5px solid transparent; }
+
+.dropTarget-dropMarker-rightArrow {
+  width: 0;
+  height: 0;
+  border-top: 4.5px solid transparent;
+  border-right: 9px solid #4a451b;
+  border-bottom: 4.5px solid transparent; }

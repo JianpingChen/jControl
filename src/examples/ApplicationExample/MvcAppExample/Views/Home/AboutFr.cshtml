@@ -1,0 +1,150 @@
+﻿@using MvcAppExample.ViewModels
+@model AppViewModel
+@{ 
+ViewBag.Title = "A propos"; 
+} 
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>propos jControl MVC Exemple d'application </title>
+	<link type="text/css" id='themelink' href="@Url.Content("~/styles/Themes/WinterAlaska/WinterAlaska.css")" rel="stylesheet" />
+	<link type="text/css" href="@Url.Content("~/styles/app.css")" rel="stylesheet" />
+</head>
+<body>
+	<header> propos de cet exemple d'application </header>
+<h1> Présentation </h1>
+<p>
+	Cette application est créée pour démontrer que vous pouvez créer des applications entièrement vérifiables , themable , localisables web efficace en utilisant notre bibliothèque .
+</p>
+<h1>
+	Caractéristiques démontré dans cette applicaiton
+</h1>
+<h2> thèmes personnalisables </h2>
+<p>
+	Dans le coin supérieur droit de la page , trouver " Sélectionner un thème " tomber. Basculer entre les deux thèmes fournis . Comme la sélection modifie la page d'accueil va changer son thème. Cette page sur l'intérieur d'une iframe ne sera donc pas changer .
+</p>
+<h2>localisation</h2>
+<p>
+	Si vous modifiez la langue par défaut de votre navigateur français, vous devriez voir une version française de cette demande. La traduction est faite par Google Translate. Nous applogize pour toute inexactitude dans la traduction.</p>
+<h2>groupe de l'onglet</h2>
+<p>
+	conteneur de niveau supérieur de cet exemple d'application est un groupe d'onglets avec cette page dans l'onglet "A propos" et une application de gestion est contenue dans l'onglet "Demo" . Cliquez sur les en-têtes d'onglets pour basculer entre les deux.
+</p>
+<h2>infobulles</h2>
+<p>
+	Chacune des réglettes a une info-bulle . Lorsque souris planer sur différents tête de l'onglet , les info-bulles sont affichées . Il ya d'autres endroits dans l'onglet " Démo " où les info-bulles sont également utilisés .
+</p>
+<h2> séparateur vertical redimensionnable </h2>
+<p>
+	Dans l'onglet " Démo " , la mise en page de niveau supérieur est un séparateur vertical redimensionnable où deux panneaux sont divisés par une barre de séparation verticale . Clic de souris et se déplacer dans la barre de séparation va redimensionner les panneaux . Le panneau de gauche a une largeur minimum . Le contrôle de redimensionnement ne sera pas redimensionner à une largeur inférieure à son minimum . Il ya deux boutons dans la barre de séparation qui peuvent réduire ou développer panneau latéral gauche ou à droite .
+</p>
+<h2>
+	menu vertical
+</h2>
+<p>
+	panneau de gauche de l'onglet «Demo» contient un menu vertical avec des sous-menus . Il s'agit d'une souris sur le menu où lorsque la souris survole un menu enfant élément de menu racine articles sera affiché jusqu'à ce que la souris quitte l'arbre des éléments de menu .
+</p>
+<h2> la liaison de données et la validation des données </h2>
+<p>
+	Lorsque "Créer" - > " produit " du menu est invoquée , le panneau latéral de droite est rempli avec des contrôles pour modifier une instance de produit . Bouton "Enregistrer" est désactivé jusqu'à ce que l'instance a des valeurs valides . Un exemple de produit valide doit avoir un nom non - vide et un prix supérieur à zéro . Essayez des valeurs différentes dans ces deux domaines pour voir comment le bouton "Enregistrer" est contrôlé par la liaison de données et la validation .
+</p>
+<p>
+	validation similaire est également démontrée lorsque "Créer" - > " Contact" est invoqué . Pour une instance de contact , une expression régulière est utilisée pour valider champ email .
+</p>
+<h2> extension </h2>
+<p>
+	Lors de l'édition produit ou un contact, extenseurs sont inclus dans la vue d'édition . Pour des fins de démonstration , ils ne contiennent que du texte pour décrire des exigences du terrain . Cliquez extension icône pour voir comment ils se comportent .
+</p>
+<h2>
+	spinner numérique
+</h2>
+<p>
+	spinner numérique est utilisé pour modifier le produit champ "Prix " . Haut-bas les boutons de la fileuse modifie la valeur du champ .
+</p>
+<h2>zone de groupe</h2>
+<p>
+	champ de type de produit est contenu dans une zone de groupe .
+</p>
+<h2> groupe de radio </h2>
+valeur du champ Type de produit
+<p>
+	est modifiée par une commande de groupe de radio où un ensemble de commandes de radio de la boîte doit avoir qu'une seule valeur sélectionnée. Clic de souris sur l'élément (et pas seulement la boîte de radio) va changer la valeur .
+</p>
+<h2>
+	stylable bouton de navigation de fichiers
+</h2>
+<p>
+	Un bouton stylable de navigation de fichiers est utilisé pour éditer domaine de la vidéo du produit. Un gradient simple est utilisé pour démontrer la stylability de la touche de navigation de fichiers .
+</p>
+<h2>
+	contrôle multi de téléchargement de fichiers
+</h2>
+<p>
+	Un contrôle multi de téléchargement de fichier est utilisé pour éditer champ d'images du produit . Cette commande va ajouter de nouveaux fichiers lorsque le fichier est sélectionné avec le bouton du haut . Après fichier est sélectionné , une icône de fichier sélectionné est ajouté . Valeur du fichier peut être modifié ou supprimé avec des boutons dans une icône de fichier sélectionné .
+</p>
+
+<h2>
+	Date sélecteur
+</h2>
+<p>
+	Un sélecteur de date est utilisé à ce jour de champ d'une instance de contact de naissance modifier. La valeur de l'année peut être édité avec une zone de texte ou modifié par des boutons haut-bas sur la même ligne.
+</p>
+<h2>
+	cliquez sur Modifier le texte
+</h2>
+<p>
+	Dans le cadre de contrôle Sélecteur de dates , la valeur de l'année de la date picker est éditée en réalité par un clic contrôle d'édition de texte où il affiche sous forme de texte et des modifications à modifiable quand on clique dessus . A titre de témoin séparé, il peut être utilisé pour construire d'autres contrôles où ce problème est souhaitée.
+</p>
+<h2> dialogue modale redimensionnable </h2>
+<p>
+	Lorsque "Rechercher" - > " produit " du menu est invoquée , une liste de produits s'affiche dans le panneau de droite . Le bouton le plus à gauche dans chaque ligne invoquer une boîte de dialogue modale pour l'édition de l'instance de produit correspondant . Ce dialogue a redimensionnement frontières. Passez la souris sur la frontière jusqu'à ce que le curseur de redimensionnement apparaît . Cliquez et déplacez la souris pour redimensionner la boîte de dialogue dans des directions différentes .
+</p>
+<h2> dialogue de l'assistant redimensionnable </h2>
+<p>
+	même, lorsque "Rechercher" - > " Contact> élément de menu est appelé, une liste de contacts est affichée dans le panneau de droite Le bouton le plus à gauche dans chaque ligne invoquer une boîte de dialogue de l'assistant pour modifier l'instance de contact correspondante . . cette boîte de dialogue de l'assistant a également redimensionnement frontières.
+</p>
+<h2> redimensionner panneau </h2>
+<p>
+	partagée par de dialogue modale redimensionnable de l'assistant de dialogue et redimensionnable , redimensionner panneau est le contrôle qui fournit la fonctionnalité de redimensionnement . À titre de contrôle indépendant , il peut être utilisé pour construire d'autres contrôles wher comportement redimensionnement est souhaitée.
+</p>
+<h2>panneau centralisation </h2>
+<p>
+	dialogue de l'assistant , les contrôles d'édition sont toujours centrés dans la rangée du milieu contenu dans ses changements de taille . Ce comportement est le résultat d'un panneau centralisateur . Comme un contrôle indépendant , il peut être utilisé pour construire d'autres contrôles où la centralisation comportement contenu est souhaitée.
+</p>
+<h2>
+	fenêtre de confirmation
+</h2>
+<p>
+	Après un produit ou un exemple de contact sont enregistrées , un court message est affiché pour une courte période de temps . Ceci est le résultat d'un contrôle contextuel de confirmation . Ce comportement est souhaitable lorsque vous demandez l'utilisateur à cliquer sur un dialogue de confirmation se sent inutile.
+</p>
+<h2>
+	progresser contrôle
+</h2>
+<p>
+	Quand une instance de produit est enregistré avec le téléchargement de fichiers pour les champs de vidéo ou de photos , un contrôle de progression s'affiche pour montrer les progrès de téléchargement . Cette commande est utilisée pour le rapport de progrès de téléchargement de fichiers et peut également être utilisé dans les cas où la progression des opérations de serveur est prévisible.
+</p>
+<h1>
+	Autres contrôles dans notre bibliothèque
+</h1>
+<p>
+	Nous avons aussi d'autres contrôles disponibles dans notre bibliothèque , mais pas fait la démonstration dans cette application.
+</p>
+<h2>nœud d'arbre</h2>
+<p>
+	Ce contrôle peut être utilisé pour construire l'arbre . Nœud de l'arbre peut être développée et réduite en clic de souris sur l'expansion de contrôle dans l'en-tête de l'arbre de noeud similaire à expander contrôle .
+</p>
+<h2>
+	menu horizontal
+</h2>
+<p>
+	similaire au menu vertical démontré . Menu horizontal a ses éléments de menu racine alignés horizontalement . Éléments du menu enfant sont affichés sous parent élément de menu .
+</p>
+<h2>
+	spinner modulaire
+</h2>
+<p>
+	similaires à spinner numérique , spinner modulaire peut avoir une valeur maximale et une valeur de pas de spin . Boutons up-down augmenter / diminuer la valeur par la valeur du pas de spin . Whem maximale est atteinte, la valeur revient à la valeur initiale .
+</p>
+</body>
+</html>

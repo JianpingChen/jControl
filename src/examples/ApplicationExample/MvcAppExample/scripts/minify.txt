@@ -1,0 +1,18 @@
+﻿You need "node" and "r.js" to minify your build.
+
+For more details on minimizing your javascripts using requirejs, please visit: http://requirejs.org/docs/optimization.html
+
+To minify your scripts into "build.1.0.0.0.js", run the following command in the "scripts" folder.
+
+node r.js -o name=mvcApp out=build.1.0.0.0.js baseUrl=. optimize=none
+
+If you want to embed your version number into file name of the "out" parameter, you'd need some customization.
+The benefit of doing this is you won't run into browser script caching issue.
+
+Go to http://closure-compiler.appspot.com/home
+Select "Advanced" for optimization
+Paste in the content of build.1.0.0.0.js
+Compile
+Save default.js to ugly.js
+
+Done!

@@ -1,0 +1,73 @@
+﻿@using MvcAppExample.ViewModels
+@model AppViewModel
+
+@{
+    ViewBag.Title = "About";
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>About jControl MVC Application Example</title>
+	<link type="text/css" id='themelink' href="@Url.Content("~/styles/Themes/WinterAlaska/WinterAlaska.css")" rel="Stylesheet" />
+	<link type="text/css" href="@Url.Content("~/styles/app.css")" rel="Stylesheet" />
+</head>
+<body>
+	<header>About this sample application</header>
+	<h1>Introduction</h1>
+	<p>This application is created to demonstrate that you can create fully testable, themable, localizable web applications efficiently using our library.</p>
+	<h1>Features Demonstrated in This Applicaiton</h1>
+	<h2>customizable themes</h2>
+	<p>On the upper right corner of the page, find "Select a Theme" drop down. Switch between two themes provided. As the selection changes the hosting page will change its theme. This about page is inside an iframe therefore will not change.</p>	
+	<h2>localization</h2>
+	<p>If you change your browser's default language to French, you should see a French version of this application. The translation is done by Google Translate. We applogize for any inaccuracy in translation.</p>
+	<h2>tab group</h2>
+	<p>Top level container of this sample application is a tab group with this page in the "About" tab and a business application is contained in the "Demo" tab. Click on the tab headers to switch between the two.</p>
+	<h2>tooltip</h2>
+	<p>Each of the tab headers has a tooltip. When mouse hover over different tab header, tooltips are displayed. There are other places in the "Demo" tab where tooltips are also used.</p>
+	<h2>resizable vertical splitter</h2>
+	<p>In the "Demo" tab, the top level layout is a resizable vertical splitter where two panels are divided by a vertical splitter bar. Mouse click and move in the splitter bar will resize the panels. 
+	Left panel has a minimum width. The resize control will not resize it to a width less than its minimum. There are two buttons in the splitter bar that can collapse or expand left or right side panel.</p>
+	<h2>vertical menu</h2>
+	<p>Left panel in the "Demo" tab contains a vertical menu with sub-menu items. This is a mouse over menu where when mouse hovers over a root menu item child menu items will be displayed until mouse leaves the menu items tree.</p>
+	<h2>data binding and data validation</h2>
+	<p>When "Create"->"Product" menu item is invoked, right hand side panel is populated with controls to edit a product instance. "Save" button is disabled until the instance has valid values. A valid product instance must have a non-empty name and a price greater than zero. Try different values in these two fields to see how "Save" button is controlled by data binding and validation.</p>
+	<p>Similar validation is also demonstrated when "Create"->"Contact" is invoked. For a contact instance, a RegEx is used to validate email field.</p>
+	<h2>expander</h2>
+	<p>When editing product or contact, expanders are included in the editing view. For demonstration purpose, they only contain text to describe field requirements. Click expander icon to see how they behave.</p>
+	<h2>numeric spinner</h2>
+	<p>A numeric spinner is used to modify product "price" field. Up-down buttons of the spinner changes the value of the field.</p>
+	<h2>group box</h2>
+	<p>Product type field is contained in a group box. </p>
+	<h2>radio group</h2>
+	<p>Product type field value is modified by a radio group control where a set of radio box controls should have only one value selected. Mouse click on the item (not just the radio box) will change the value.</p>
+	<h2>stylable file browse button</h2>
+	<p>A stylable file browse button is used to edit product video field. A simple gradient is used to demonstrate the stylability of the file browse button.</p>
+	<h2>multi file upload control</h2>
+	<p>A multi file upload control is used to edit product pictures field. This control will add new files when file is selected with the top button. After file is selected, a selected file icon is added. File value can be changed or deleted with buttons in a selected file icon.</p>
+	<h2>date picker</h2>
+	<p>A date picker is used to edit date of birth field of a contact instance. The year value can be edited with a text box or changed by up-down buttons on the same row.</p>
+	<h2>click edit text</h2>
+	<p>As part of date picker control, the year value of the date picker is actually edited by a click edit text control where it displays as text and changes to editable when clicked. As a separate control, it can be used to construct other controls where this behaviour is desired.</p>
+	<h2>resizable modal dialog</h2>
+	<p>When "Find"->"Product" menu item is invoked, a list of products is displayed in the right hand side panel. The leftmost button in each row will invoke a modal dialog for editing the corresponding product instance. This dialog has resizing borders. Hover mouse over the border until the resizing cursor appears. Click and move mouse to resize the dialog in different directions.</p>
+	<h2>resizable wizard dialog</h2>
+	<p>Similarly, when "Find"->"Contact> menu item is invoked, a list of contacts is displayed in the right hand side panel. The leftmost button in each row will invoke a wizard dialog for editing the corresponding contact instance. This wizard dialog also has resizing borders.</p>
+	<h2>resize panel</h2>
+	<p>Shared by resizable modal dialog and resizable wizard dialog, resize panel is the control that provides the functionality of resizing. As an independent control, it can be used to construct other controls wher resizing behaviour is desired.</p>
+	<h2>centralizing panel</h2>
+	<p>In wizard dialog, the editing controls are always centered in the middle content row as its size changes. This behaviour is the result of a centralizing panel. As an independent control, it can be used to construct other controls where centralizing content behaviour is desired.</p>
+	<h2>confirmation popup</h2>
+	<p>After a product or contact instance is saved, a short message is displayed for a short time period. This is the result of a confirmation popup control. This behaviour is desirable when asking user to click on a confirmation dialog feels redundant.</p>
+	<h2>progress control</h2>
+	<p>When a product instance is saved with file uploads for video or pictures fields, a progress control is displayed to show uploading progress. This control is used for file upload progress report and may also be used in cases where server operation progress is predictable.</p>
+	<h1>Other controls in our library</h1>
+	<p>We also have some other controls available in our library but not demoed in this application.</p>
+	<h2>tree node</h2>
+	<p>This control can be used to construct tree. Tree node can be expanded and collapsed by mouse click on expand control in the tree node header similar to expander control.</p>
+	<h2>horizontal menu</h2>
+	<p>Similar to vertical menu demonstrated. Horizontal menu has its root menu items lined up horizontally. Child menu items are displayed underneath parent menu item.</p>
+	<h2>modular spinner</h2>
+	<p>Similar to numeric spinner, modular spinner may have a maximum value and a spin step value. Up-down buttons increase/decrease the value by the spin step value. Whem maximum is reached the value goes back to initial value.</p>
+</body>
+</html>

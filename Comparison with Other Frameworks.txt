@@ -1,0 +1,58 @@
+Comparison with other JavaScript Frameworks
+
+In this document, we compare our solution to some existing JavaScript frameworks with regard to the problem we are trying 
+to solve.
+
+At the point when this document is last updated, none of the existing frameworks has provided any solution to problem 6, supporting responsive design. The following comparison will not include problem 6.
+
+1. jQuery
+
+jQuery supports AJAX calls and client side DOM construction. Theoretically, it can support a business data structure 
+based client-server contract. However, historically and practically, it is mostly used to search DOM elements to attach 
+JavaScript functions to DOM elements generated on the server side for DOM manipulation.
+
+jQuery does not support data binding. Client side data validation will have to be hand-crafted on each and every property
+where validation is required. Data submitted to server often takes the format of form submission. Result in tight coupling
+of client side UI rendering with server side data receiving.
+
+jQuery by itself does not provide reusable client side UI controls. jQuery UI plug-ins are created to fill in this gap. 
+However, these plug-ins are developed in an unsystematic manner. Code redundancy often occurs among plug-ins. 
+These plug-ins were not tested together and they sometimes do not work together or even conflict with each other by overwriting functions in the $ namespace.
+
+jQuery UI provides some reusable UI controls. The focus of jQuery UI seems to be adding additional behaviours to existing 
+DOM elements. Controls provided by jQuery UI are intended to be used as provided with limited extensibility. 
+No infrastructure is provided to help application developers to interpret user gestures into business actions or 
+data manipulations. Often application code will have to traverse and/or reinterpret part of DOM to create corresponding 
+data manipulations.
+
+In brief, jQuery by itself does not solve problems we identified except some help on problem 5. jQuery UI plugins, however, made problem 5 even worse since each and every of them will need to be tested for cross browser support within application pages. Code duplication among them is obvious and significant.
+
+2. KnockoutJs
+
+KnockoutJs is created to provide data binding between UI elements and underlying JavaScript "ViewModel" objects. 
+This binding is established by adding extra "data-binding" attribute to the corresponding UI elements. For it to 
+function, a DOM structure is presumed to exist and already have "data-binding" attributes set up correctly. This DOM construction logic can be executed on the client side by RequireJs injection via a text based template. After DOM construction, client code can call into KnockoutJs code to finish data binding. User event handling routines can be wired up after that. This will solve problem 1 and 4. Problem 3 can be solved by using computed observable or customer binding. Problem 2 is solved partially because DOM construction code and ViewModel code that triggers Knockout binding and DOM manipulation can only be tested together. KnockoutJs by itself is not intended to solve problem 5 therefore irrelevant for comparison.
+
+3. AngularJs
+
+AngularJs is not much different from KnockoutJs in that they both depends on proprietary attributes in presumed DOM elements for linking DOM elements with JavaScript code. In addition, AngularJs provides text content direct binding "{{" and "}}". Problem 1 can be solved by modifying controller data member with data returned from AJAX call. Problem 3 can be solved by using AngularJs built in error messages (possibly customizable). Problem 4 can be solved by using $http to send data to the server. Again, problem 2 is solved partially because DOM construction code and controller code that triggers AngularJs binding and DOM manipulation can only be tested together. AngularJs by itself is not intended to solve problem 5 therefore irrelevant for comparison.
+
+4. Ember
+
+Ember is very similar to AngularJs. It uses proprietary mark ups to link DOM elements with JavaScript code. Instead of "controller", it uses "components". As a result, it shares the same characteristics with Knockout and Angular. It may solve problem 1, 3, and 4 but can only solve problem 2 partially. Similar to Knockout and Angular, Ember also depends on jQuery for cross browser capability.
+
+5. Backbone
+
+Backbone is a model-centric library that provides infrastructure that manages model attributes and collections, event notifications, and client-server communication. In itself, it doesn't provide data binding between data model and DOM elements but instead notifies views with model change events and allow customized code to refresh the view on model value changes. It solves problem 1, 2, and 4 but leaves problem 3 to application developers. Backbone by itself is not intended to solve problem 5 therefore irrelevant for comparison.
+
+6. Ext.Js
+
+Ext.Js renders views on the client side based on user defined proprietary format templates. It provides data binding between views and models. Data validation can be defined in the models. It solves problem 1, 2, 3, and 4. Problem 5 seems to have been proven solved by Ext.Js. 
+
+7. Telerik Kendo UI
+
+Not sure about the details. From their web site, we can find "Simple server-side data binding and CRUD". If this is not 
+misleading, data binding should be created by server side code when DOM is created. Client side JavaScript code 
+is using DOM constructed on the server side as contract and assumption. If this is the correct understanding, it is 
+unlikely they can solve problem 1, 2, and 4.
+

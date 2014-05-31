@@ -1,0 +1,54 @@
+The following are terms of a legal agreement between you and Visual Dynamics Software Ltd.
+
+By accessing, browsing and/or using this open source project, collectively named "jControl", you acknowledge 
+that you have read, understood, and agreed to be bound by these terms and to comply with all applicable laws 
+and regulations. If you do not agree to these terms, do not use any materials published in this project.
+
+Visual Dynamics Software Ltd. may at any time revise these terms by updating this document. By using materials 
+published in jControl project, you agree to be bound by any such revisions and should therefore periodically 
+read this document to determine the current terms to which you are bound.
+
+Licensing
+
+Unless otherwise specified, all files included in this project are under GPL license v3, 
+http://opensource.org/licenses/GPL-3.0.
+
+Non-competition
+
+Visual Dynamics Software Ltd. publish this open source project for the goodwill of public knowledge. 
+Any Material you received under such goodwill should not be used to engage any activity in competition 
+against business interest of Visual Dynamics Software Ltd. Visual Dynamics Software Ltd., in its sole discretion,
+has the right to suspend or terminate your license if such activities are engaged using Material provided 
+in this project. If you purchase a commercial licensed version of the library, this condition will be overruled 
+by the purchase contract between you and Visual Dynamics Software Ltd.
+
+Intellectual Property
+
+All files included in this project, along with any Materials (including, for example, white papers, press releases,
+data sheets, product descriptions and FAQs) is the copyrighted work of Visual Dynamics Software Ltd. and is protected 
+under Canadian and worldwide copyright laws and treaty provisions. Visual Dynamics Software Ltd. grants you permission 
+to copy such Materials so long as each copy (i) plainly displays all copyright and other proprietary notices, 
+in the same form and manner as on the original and (ii) displays a statement that the Materials are used solely 
+with permission of Visual Dynamics Software Ltd.
+
+Any software which you download from this project is governed exclusively by the license terms accompanying the file 
+or the terms of the license agreement which accompanied the original product licensed by you which you are updating, 
+and by downloading such software you agree to abide by the terms of the license. Any reproduction or redistribution 
+of such software not in accordance with the software license is expressly prohibited by law.
+
+Except as expressly granted in this section (or to you specifically in writing), Visual Dynamics Software Ltd. 
+and its suppliers do not grant any express or implied right to you under any patents, copyrights, trademarks, 
+or trade secret information.
+
+Trademarks
+
+Trademarks of Visual Dynamics Software Ltd. may be used publicly only with permission from Visual Dynamics Software Ltd.
+and proper acknowledgement. The name "jControl" is a registered trade mark of Visual Dynamics Software Ltd.
+
+Contribution
+
+Visual Dynamics Software Ltd. is granted copyright to any contribution made to this project unconditionally. 
+This copyright is shared by Visual Dynamics Software Ltd. and contributors to this project.
+
+
+

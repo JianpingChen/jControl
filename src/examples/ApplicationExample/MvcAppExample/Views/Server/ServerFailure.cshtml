@@ -1,0 +1,9 @@
+﻿@using MvcAppExample.ViewModels
+@model ErrorViewModel
+
+@{
+    ViewBag.Title = "ServerFailure";
+}
+
+<div id="returnCode">{"ReturnCode":"@Model.ReturnCode"}</div>
+<div id="returnMessage">{"ReturnMessage":"@Model.ReturnMessage"}</div>
